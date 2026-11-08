@@ -1,0 +1,28 @@
+{
+  "n_samples": 10,
+  "sample_ids": [
+    "S1-1_stereoseq",
+    "S1-2_stereoseq",
+    "S1-3_stereoseq",
+    "S1-4_stereoseq",
+    "S1-5_stereoseq",
+    "S1-6_stereoseq",
+    "S1-7_stereoseq",
+    "S2-1_stereoseq",
+    "S2-3_stereoseq",
+    "S2-4_stereoseq"
+  ],
+  "n_spots": 6016,
+  "n_genes": 19191,
+  "n_edges": 36096,
+  "expression_type": "raw",
+  "cell_types": [
+    "Guard_cell",
+    "Spongy_mesophyll_cell",
+    "Palisade_mesophyll_cell",
+    "Upper_epidermal_cell",
+    "Lower_epidermal_cell",
+    "Vascular_cell"
+  ],
+  "n_cell_types": 6
+}

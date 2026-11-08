@@ -1,0 +1,14 @@
+{
+ "python": "3.10.9",
+ "platform": "Windows-10-10.0.19045-SP0",
+ "processor": "Intel64 Family 6 Model 85 Stepping 7, GenuineIntel",
+ "torch": "2.6.0+cu124",
+ "torch_geometric": "2.8.1",
+ "numpy": "2.2.6",
+ "scipy": "1.15.3",
+ "scikit_learn": "1.6.1",
+ "h5py": "3.16.0",
+ "pandas": "2.3.3",
+ "cuda": "12.4",
+ "gpu": "NVIDIA GeForce RTX 3090"
+}

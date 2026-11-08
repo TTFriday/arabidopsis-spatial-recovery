@@ -1,0 +1,70 @@
+{
+  "dataset": "STDS0000104",
+  "source_url": "https://db.cngb.org/stomics/datasets/STDS0000104/data",
+  "ftp_base": "https://ftp.cngb.org/pub/SciRAID/stomics/STDS0000104/stomics",
+  "checked_at_utc": "2026-10-17T11:12:13.184694+00:00",
+  "file_count": 10,
+  "total_bytes": 30498522,
+  "files": [
+    {
+      "name": "S1-1_stereoseq",
+      "file": "S1-1_stereoseq.h5ad",
+      "bytes": 3782552,
+      "sha256": "7fa66b064bada451457543152476c4a1ad4bd377770ccb9718b512dfd8687d21"
+    },
+    {
+      "name": "S1-2_stereoseq",
+      "file": "S1-2_stereoseq.h5ad",
+      "bytes": 3062244,
+      "sha256": "6e6498e9fba0edfaf4bb7fdb3e0cff66e5a37b0cc1d41bcb766a234d304f7925"
+    },
+    {
+      "name": "S1-3_stereoseq",
+      "file": "S1-3_stereoseq.h5ad",
+      "bytes": 2349936,
+      "sha256": "157f5a5b63b1a2891021855e6caabeef53059117ece03a6ce1b9ecbaff222a13"
+    },
+    {
+      "name": "S1-4_stereoseq",
+      "file": "S1-4_stereoseq.h5ad",
+      "bytes": 2870748,
+      "sha256": "7439d906b37047438a55b110633fca2cbbbeca1fb3ef1c34d852b4cd5f7c7d12"
+    },
+    {
+      "name": "S1-5_stereoseq",
+      "file": "S1-5_stereoseq.h5ad",
+      "bytes": 2555640,
+      "sha256": "6cae6e0c52251093accbd0d929d4363a9ca7533ca9633dbec641bac9dcf7d70e"
+    },
+    {
+      "name": "S1-6_stereoseq",
+      "file": "S1-6_stereoseq.h5ad",
+      "bytes": 2932072,
+      "sha256": "42e20eaff849bd6e3c8260b4560c9ba98026614355a13ebb8a651cf3c708b11c"
+    },
+    {
+      "name": "S1-7_stereoseq",
+      "file": "S1-7_stereoseq.h5ad",
+      "bytes": 2659278,
+      "sha256": "1a64ff95e3cb8433396f8c4dc2d7638282729dd73e720d1be6bec5fff888c7c2"
+    },
+    {
+      "name": "S2-1_stereoseq",
+      "file": "S2-1_stereoseq.h5ad",
+      "bytes": 3363572,
+      "sha256": "20bc0a12cc24a9c4d4c17a7bd0d0fccd42f63947458f21ff73499bf68fe12ac5"
+    },
+    {
+      "name": "S2-3_stereoseq",
+      "file": "S2-3_stereoseq.h5ad",
+      "bytes": 3424812,
+      "sha256": "7e4f2eba7c7079bce90d9836d713b2c1b2ed8e3e1f9598669811e06c12d57a6e"
+    },
+    {
+      "name": "S2-4_stereoseq",
+      "file": "S2-4_stereoseq.h5ad",
+      "bytes": 3497668,
+      "sha256": "86d4c66e369b3aaa3f272362a5297b143c7251be702668808c014994835677a9"
+    }
+  ]
+}

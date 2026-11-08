@@ -1,0 +1,11 @@
+sample_id,sample_idx,sample_group,split,n_spots,celltype_Guard_cell,celltype_Lower_epidermal_cell,celltype_Palisade_mesophyll_cell,celltype_Spongy_mesophyll_cell,celltype_Upper_epidermal_cell,celltype_Vascular_cell
+S1-1_stereoseq,0,S1,train,721,19,124,201,200,99,78
+S1-2_stereoseq,1,S1,train,618,6,86,113,136,147,130
+S1-3_stereoseq,2,S1,train,389,10,82,72,75,97,53
+S1-4_stereoseq,3,S1,train,548,32,135,155,74,81,71
+S1-5_stereoseq,4,S1,train,537,25,85,144,118,123,42
+S1-6_stereoseq,5,S1,train,557,20,75,140,111,141,70
+S1-7_stereoseq,6,S1,val,438,18,75,106,61,83,95
+S2-1_stereoseq,7,S2,val,734,16,128,174,133,163,120
+S2-3_stereoseq,8,S2,test,776,23,106,200,223,171,53
+S2-4_stereoseq,9,S2,test,698,15,134,209,124,165,51

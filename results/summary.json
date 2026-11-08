@@ -1,0 +1,1741 @@
+{
+  "schema_version": 1,
+  "n_conditions": 21,
+  "method_order": [
+    "No-Spatial AE",
+    "Neighbor Impute",
+    "GCN Imputer",
+    "GAT Imputer",
+    "Quality GNN (Ours)"
+  ],
+  "metric_order": [
+    "mse",
+    "mae",
+    "pearson",
+    "r2"
+  ],
+  "metric_direction": {
+    "mse": "min",
+    "mae": "min",
+    "pearson": "max",
+    "r2": "max"
+  },
+  "notes": {
+    "aggregation": "Unweighted descriptive mean over saved conditions; the 21 conditions are non-independent",
+    "inference": "No p-values, confidence intervals, resampling or training",
+    "main_metric_space": "Masked test entries after undoing gene z-scoring, in log1p count space",
+    "main_pearson": "Pooled correlation over masked entries",
+    "ablation_pearson": "Mean of eligible within-spot correlations; not comparable to pooled main Pearson",
+    "ablation_delta": "Variant test R2 minus the separately run ablation full-model test R2",
+    "ablation_degree_scaled_sum": "Incoming sum / max(outgoing degree,1), NOT an incoming-neighbor mean; raw metrics retained",
+    "missing_gate": "Empty CSV field, never zero-filled",
+    "raw_values": "Saved JSON numeric values retained; only LaTeX is rounded to four decimals",
+    "tie_break": "Derived method choices use method_order (AE first); bolding compares exact raw best values"
+  },
+  "method_means": {
+    "No-Spatial AE": {
+      "val": {
+        "mse": 0.2691723711433865,
+        "mae": 0.37596127710172106,
+        "pearson": 0.8037646185784113,
+        "r2": 0.6493806725456601
+      },
+      "test": {
+        "mse": 0.2856316765149434,
+        "mae": 0.39393406148467747,
+        "pearson": 0.7726701554797945,
+        "r2": 0.5969441887878236
+      }
+    },
+    "Neighbor Impute": {
+      "val": {
+        "mse": 0.265895171889237,
+        "mae": 0.3729881612317903,
+        "pearson": 0.8040601639520555,
+        "r2": 0.6499111787194297
+      },
+      "test": {
+        "mse": 0.2812468459208806,
+        "mae": 0.3904106854682877,
+        "pearson": 0.7742527808461871,
+        "r2": 0.5990715126196543
+      }
+    },
+    "GCN Imputer": {
+      "val": {
+        "mse": 0.3491115328811464,
+        "mae": 0.438063219899223,
+        "pearson": 0.7528718199048724,
+        "r2": 0.5690252369358426
+      },
+      "test": {
+        "mse": 0.3308718804092634,
+        "mae": 0.43276061969144003,
+        "pearson": 0.7393411256018139,
+        "r2": 0.547285680259977
+      }
+    },
+    "GAT Imputer": {
+      "val": {
+        "mse": 0.33496734216099694,
+        "mae": 0.42537518803562435,
+        "pearson": 0.7604371110598246,
+        "r2": 0.5811624385061718
+      },
+      "test": {
+        "mse": 0.3224076536439714,
+        "mae": 0.4249990192197618,
+        "pearson": 0.7439177093051729,
+        "r2": 0.5550571907134283
+      }
+    },
+    "Quality GNN (Ours)": {
+      "val": {
+        "mse": 0.2653062723222233,
+        "mae": 0.37307654037362054,
+        "pearson": 0.8053273814065116,
+        "r2": 0.6519807605516343
+      },
+      "test": {
+        "mse": 0.280677678329604,
+        "mae": 0.39088640752292814,
+        "pearson": 0.7753008376984369,
+        "r2": 0.6015285750230154
+      }
+    }
+  },
+  "ranks": {
+    "definition": "Ordinal test metric rank, 1=best; exact ties use method_order (AE first)",
+    "by_condition": {
+      "50genes_0.1": {
+        "mse": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "mae": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "pearson": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "r2": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        }
+      },
+      "50genes_0.3": {
+        "mse": {
+          "Quality GNN (Ours)": 1,
+          "Neighbor Impute": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "mae": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "pearson": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "r2": {
+          "Quality GNN (Ours)": 1,
+          "Neighbor Impute": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        }
+      },
+      "50genes_0.5": {
+        "mse": {
+          "Quality GNN (Ours)": 1,
+          "Neighbor Impute": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "mae": {
+          "Quality GNN (Ours)": 1,
+          "Neighbor Impute": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "pearson": {
+          "Quality GNN (Ours)": 1,
+          "Neighbor Impute": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "r2": {
+          "Quality GNN (Ours)": 1,
+          "Neighbor Impute": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        }
+      },
+      "50genes_0.7": {
+        "mse": {
+          "Quality GNN (Ours)": 1,
+          "Neighbor Impute": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "mae": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "pearson": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "r2": {
+          "Quality GNN (Ours)": 1,
+          "Neighbor Impute": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        }
+      },
+      "50genes_0.9": {
+        "mse": {
+          "Quality GNN (Ours)": 1,
+          "Neighbor Impute": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "mae": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "pearson": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "r2": {
+          "Quality GNN (Ours)": 1,
+          "Neighbor Impute": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        }
+      },
+      "100genes_0.1": {
+        "mse": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "mae": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "pearson": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "r2": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        }
+      },
+      "100genes_0.3": {
+        "mse": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "mae": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "pearson": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "r2": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        }
+      },
+      "100genes_0.5": {
+        "mse": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "mae": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "pearson": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "r2": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        }
+      },
+      "100genes_0.7": {
+        "mse": {
+          "Quality GNN (Ours)": 1,
+          "Neighbor Impute": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "mae": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "pearson": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "r2": {
+          "Quality GNN (Ours)": 1,
+          "Neighbor Impute": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        }
+      },
+      "100genes_0.9": {
+        "mse": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "mae": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "pearson": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "r2": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        }
+      },
+      "200genes_0.1": {
+        "mse": {
+          "Quality GNN (Ours)": 1,
+          "Neighbor Impute": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "mae": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "pearson": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "r2": {
+          "Quality GNN (Ours)": 1,
+          "Neighbor Impute": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        }
+      },
+      "200genes_0.3": {
+        "mse": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "mae": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "pearson": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "r2": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        }
+      },
+      "200genes_0.5": {
+        "mse": {
+          "Quality GNN (Ours)": 1,
+          "Neighbor Impute": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "mae": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "pearson": {
+          "Quality GNN (Ours)": 1,
+          "Neighbor Impute": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "r2": {
+          "Quality GNN (Ours)": 1,
+          "Neighbor Impute": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        }
+      },
+      "200genes_0.7": {
+        "mse": {
+          "Quality GNN (Ours)": 1,
+          "Neighbor Impute": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "mae": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "pearson": {
+          "Quality GNN (Ours)": 1,
+          "Neighbor Impute": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "r2": {
+          "Quality GNN (Ours)": 1,
+          "Neighbor Impute": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        }
+      },
+      "200genes_0.9": {
+        "mse": {
+          "Quality GNN (Ours)": 1,
+          "Neighbor Impute": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "mae": {
+          "Neighbor Impute": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "pearson": {
+          "Quality GNN (Ours)": 1,
+          "Neighbor Impute": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "r2": {
+          "Quality GNN (Ours)": 1,
+          "Neighbor Impute": 2,
+          "No-Spatial AE": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        }
+      },
+      "500genes_0.1": {
+        "mse": {
+          "Quality GNN (Ours)": 1,
+          "No-Spatial AE": 2,
+          "Neighbor Impute": 3,
+          "GCN Imputer": 4,
+          "GAT Imputer": 5
+        },
+        "mae": {
+          "No-Spatial AE": 1,
+          "Quality GNN (Ours)": 2,
+          "Neighbor Impute": 3,
+          "GCN Imputer": 4,
+          "GAT Imputer": 5
+        },
+        "pearson": {
+          "Quality GNN (Ours)": 1,
+          "No-Spatial AE": 2,
+          "Neighbor Impute": 3,
+          "GCN Imputer": 4,
+          "GAT Imputer": 5
+        },
+        "r2": {
+          "Quality GNN (Ours)": 1,
+          "No-Spatial AE": 2,
+          "Neighbor Impute": 3,
+          "GCN Imputer": 4,
+          "GAT Imputer": 5
+        }
+      },
+      "500genes_0.3": {
+        "mse": {
+          "No-Spatial AE": 1,
+          "Quality GNN (Ours)": 2,
+          "Neighbor Impute": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "mae": {
+          "No-Spatial AE": 1,
+          "Quality GNN (Ours)": 2,
+          "Neighbor Impute": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "pearson": {
+          "No-Spatial AE": 1,
+          "Quality GNN (Ours)": 2,
+          "Neighbor Impute": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "r2": {
+          "No-Spatial AE": 1,
+          "Quality GNN (Ours)": 2,
+          "Neighbor Impute": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        }
+      },
+      "500genes_0.5": {
+        "mse": {
+          "No-Spatial AE": 1,
+          "Quality GNN (Ours)": 2,
+          "Neighbor Impute": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "mae": {
+          "No-Spatial AE": 1,
+          "Neighbor Impute": 2,
+          "Quality GNN (Ours)": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "pearson": {
+          "No-Spatial AE": 1,
+          "Quality GNN (Ours)": 2,
+          "Neighbor Impute": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "r2": {
+          "No-Spatial AE": 1,
+          "Quality GNN (Ours)": 2,
+          "Neighbor Impute": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        }
+      },
+      "3000genes_0.1": {
+        "mse": {
+          "No-Spatial AE": 1,
+          "Quality GNN (Ours)": 2,
+          "GCN Imputer": 3,
+          "Neighbor Impute": 4,
+          "GAT Imputer": 5
+        },
+        "mae": {
+          "GAT Imputer": 1,
+          "No-Spatial AE": 2,
+          "Quality GNN (Ours)": 3,
+          "GCN Imputer": 4,
+          "Neighbor Impute": 5
+        },
+        "pearson": {
+          "No-Spatial AE": 1,
+          "Quality GNN (Ours)": 2,
+          "Neighbor Impute": 3,
+          "GCN Imputer": 4,
+          "GAT Imputer": 5
+        },
+        "r2": {
+          "No-Spatial AE": 1,
+          "Quality GNN (Ours)": 2,
+          "GCN Imputer": 3,
+          "Neighbor Impute": 4,
+          "GAT Imputer": 5
+        }
+      },
+      "3000genes_0.3": {
+        "mse": {
+          "Quality GNN (Ours)": 1,
+          "No-Spatial AE": 2,
+          "Neighbor Impute": 3,
+          "GCN Imputer": 4,
+          "GAT Imputer": 5
+        },
+        "mae": {
+          "GAT Imputer": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "GCN Imputer": 4,
+          "Neighbor Impute": 5
+        },
+        "pearson": {
+          "No-Spatial AE": 1,
+          "Quality GNN (Ours)": 2,
+          "Neighbor Impute": 3,
+          "GCN Imputer": 4,
+          "GAT Imputer": 5
+        },
+        "r2": {
+          "Quality GNN (Ours)": 1,
+          "No-Spatial AE": 2,
+          "Neighbor Impute": 3,
+          "GCN Imputer": 4,
+          "GAT Imputer": 5
+        }
+      },
+      "3000genes_0.5": {
+        "mse": {
+          "No-Spatial AE": 1,
+          "Quality GNN (Ours)": 2,
+          "Neighbor Impute": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "mae": {
+          "GAT Imputer": 1,
+          "Quality GNN (Ours)": 2,
+          "No-Spatial AE": 3,
+          "Neighbor Impute": 4,
+          "GCN Imputer": 5
+        },
+        "pearson": {
+          "No-Spatial AE": 1,
+          "Quality GNN (Ours)": 2,
+          "Neighbor Impute": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        },
+        "r2": {
+          "No-Spatial AE": 1,
+          "Quality GNN (Ours)": 2,
+          "Neighbor Impute": 3,
+          "GAT Imputer": 4,
+          "GCN Imputer": 5
+        }
+      }
+    },
+    "means": {
+      "mse": {
+        "No-Spatial AE": 2.5238095238095237,
+        "Neighbor Impute": 2.0476190476190474,
+        "GCN Imputer": 4.809523809523809,
+        "GAT Imputer": 4.142857142857143,
+        "Quality GNN (Ours)": 1.4761904761904763
+      },
+      "mae": {
+        "No-Spatial AE": 2.6666666666666665,
+        "Neighbor Impute": 1.8095238095238095,
+        "GCN Imputer": 4.857142857142857,
+        "GAT Imputer": 3.619047619047619,
+        "Quality GNN (Ours)": 2.0476190476190474
+      },
+      "pearson": {
+        "No-Spatial AE": 2.4761904761904763,
+        "Neighbor Impute": 1.7619047619047619,
+        "GCN Imputer": 4.857142857142857,
+        "GAT Imputer": 4.142857142857143,
+        "Quality GNN (Ours)": 1.7619047619047619
+      },
+      "r2": {
+        "No-Spatial AE": 2.5238095238095237,
+        "Neighbor Impute": 2.0476190476190474,
+        "GCN Imputer": 4.809523809523809,
+        "GAT Imputer": 4.142857142857143,
+        "Quality GNN (Ours)": 1.4761904761904763
+      }
+    }
+  },
+  "metricwins": {
+    "mse": {
+      "No-Spatial AE": 4,
+      "Neighbor Impute": 6,
+      "GCN Imputer": 0,
+      "GAT Imputer": 0,
+      "Quality GNN (Ours)": 11
+    },
+    "mae": {
+      "No-Spatial AE": 3,
+      "Neighbor Impute": 14,
+      "GCN Imputer": 0,
+      "GAT Imputer": 3,
+      "Quality GNN (Ours)": 1
+    },
+    "pearson": {
+      "No-Spatial AE": 5,
+      "Neighbor Impute": 11,
+      "GCN Imputer": 0,
+      "GAT Imputer": 0,
+      "Quality GNN (Ours)": 5
+    },
+    "r2": {
+      "No-Spatial AE": 4,
+      "Neighbor Impute": 6,
+      "GCN Imputer": 0,
+      "GAT Imputer": 0,
+      "Quality GNN (Ours)": 11
+    }
+  },
+  "win_margins": {
+    "by_condition": [
+      {
+        "condition": "50genes_0.1",
+        "winner": "Neighbor Impute",
+        "runner_up": "Quality GNN (Ours)",
+        "winning_margin_r2": 0.00014218688011169434,
+        "best_non_gated_method": "Neighbor Impute",
+        "gated_minus_best_non_gated_r2": -0.00014218688011169434
+      },
+      {
+        "condition": "50genes_0.3",
+        "winner": "Quality GNN (Ours)",
+        "runner_up": "Neighbor Impute",
+        "winning_margin_r2": 0.0006589889526367188,
+        "best_non_gated_method": "Neighbor Impute",
+        "gated_minus_best_non_gated_r2": 0.0006589889526367188
+      },
+      {
+        "condition": "50genes_0.5",
+        "winner": "Quality GNN (Ours)",
+        "runner_up": "Neighbor Impute",
+        "winning_margin_r2": 0.002354830503463745,
+        "best_non_gated_method": "Neighbor Impute",
+        "gated_minus_best_non_gated_r2": 0.002354830503463745
+      },
+      {
+        "condition": "50genes_0.7",
+        "winner": "Quality GNN (Ours)",
+        "runner_up": "Neighbor Impute",
+        "winning_margin_r2": 0.0007058382034301758,
+        "best_non_gated_method": "Neighbor Impute",
+        "gated_minus_best_non_gated_r2": 0.0007058382034301758
+      },
+      {
+        "condition": "50genes_0.9",
+        "winner": "Quality GNN (Ours)",
+        "runner_up": "Neighbor Impute",
+        "winning_margin_r2": 9.110569953918457e-05,
+        "best_non_gated_method": "Neighbor Impute",
+        "gated_minus_best_non_gated_r2": 9.110569953918457e-05
+      },
+      {
+        "condition": "100genes_0.1",
+        "winner": "Neighbor Impute",
+        "runner_up": "Quality GNN (Ours)",
+        "winning_margin_r2": 0.003906756639480591,
+        "best_non_gated_method": "Neighbor Impute",
+        "gated_minus_best_non_gated_r2": -0.003906756639480591
+      },
+      {
+        "condition": "100genes_0.3",
+        "winner": "Neighbor Impute",
+        "runner_up": "Quality GNN (Ours)",
+        "winning_margin_r2": 0.0019394755363464355,
+        "best_non_gated_method": "Neighbor Impute",
+        "gated_minus_best_non_gated_r2": -0.0019394755363464355
+      },
+      {
+        "condition": "100genes_0.5",
+        "winner": "Neighbor Impute",
+        "runner_up": "Quality GNN (Ours)",
+        "winning_margin_r2": 0.0013604462146759033,
+        "best_non_gated_method": "Neighbor Impute",
+        "gated_minus_best_non_gated_r2": -0.0013604462146759033
+      },
+      {
+        "condition": "100genes_0.7",
+        "winner": "Quality GNN (Ours)",
+        "runner_up": "Neighbor Impute",
+        "winning_margin_r2": 0.0004425048828125,
+        "best_non_gated_method": "Neighbor Impute",
+        "gated_minus_best_non_gated_r2": 0.0004425048828125
+      },
+      {
+        "condition": "100genes_0.9",
+        "winner": "Neighbor Impute",
+        "runner_up": "Quality GNN (Ours)",
+        "winning_margin_r2": 0.00018528103828430176,
+        "best_non_gated_method": "Neighbor Impute",
+        "gated_minus_best_non_gated_r2": -0.00018528103828430176
+      },
+      {
+        "condition": "200genes_0.1",
+        "winner": "Quality GNN (Ours)",
+        "runner_up": "Neighbor Impute",
+        "winning_margin_r2": 0.0002186596393585205,
+        "best_non_gated_method": "Neighbor Impute",
+        "gated_minus_best_non_gated_r2": 0.0002186596393585205
+      },
+      {
+        "condition": "200genes_0.3",
+        "winner": "Neighbor Impute",
+        "runner_up": "Quality GNN (Ours)",
+        "winning_margin_r2": 0.0032709836959838867,
+        "best_non_gated_method": "Neighbor Impute",
+        "gated_minus_best_non_gated_r2": -0.0032709836959838867
+      },
+      {
+        "condition": "200genes_0.5",
+        "winner": "Quality GNN (Ours)",
+        "runner_up": "Neighbor Impute",
+        "winning_margin_r2": 0.0029509663581848145,
+        "best_non_gated_method": "Neighbor Impute",
+        "gated_minus_best_non_gated_r2": 0.0029509663581848145
+      },
+      {
+        "condition": "200genes_0.7",
+        "winner": "Quality GNN (Ours)",
+        "runner_up": "Neighbor Impute",
+        "winning_margin_r2": 0.003969252109527588,
+        "best_non_gated_method": "Neighbor Impute",
+        "gated_minus_best_non_gated_r2": 0.003969252109527588
+      },
+      {
+        "condition": "200genes_0.9",
+        "winner": "Quality GNN (Ours)",
+        "runner_up": "Neighbor Impute",
+        "winning_margin_r2": 0.0005800127983093262,
+        "best_non_gated_method": "Neighbor Impute",
+        "gated_minus_best_non_gated_r2": 0.0005800127983093262
+      },
+      {
+        "condition": "500genes_0.1",
+        "winner": "Quality GNN (Ours)",
+        "runner_up": "No-Spatial AE",
+        "winning_margin_r2": 0.001030951738357544,
+        "best_non_gated_method": "No-Spatial AE",
+        "gated_minus_best_non_gated_r2": 0.001030951738357544
+      },
+      {
+        "condition": "500genes_0.3",
+        "winner": "No-Spatial AE",
+        "runner_up": "Quality GNN (Ours)",
+        "winning_margin_r2": 0.0014848411083221436,
+        "best_non_gated_method": "No-Spatial AE",
+        "gated_minus_best_non_gated_r2": -0.0014848411083221436
+      },
+      {
+        "condition": "500genes_0.5",
+        "winner": "No-Spatial AE",
+        "runner_up": "Quality GNN (Ours)",
+        "winning_margin_r2": 0.0022687315940856934,
+        "best_non_gated_method": "No-Spatial AE",
+        "gated_minus_best_non_gated_r2": -0.0022687315940856934
+      },
+      {
+        "condition": "3000genes_0.1",
+        "winner": "No-Spatial AE",
+        "runner_up": "Quality GNN (Ours)",
+        "winning_margin_r2": 0.0007026195526123047,
+        "best_non_gated_method": "No-Spatial AE",
+        "gated_minus_best_non_gated_r2": -0.0007026195526123047
+      },
+      {
+        "condition": "3000genes_0.3",
+        "winner": "Quality GNN (Ours)",
+        "runner_up": "No-Spatial AE",
+        "winning_margin_r2": 0.0005875229835510254,
+        "best_non_gated_method": "No-Spatial AE",
+        "gated_minus_best_non_gated_r2": 0.0005875229835510254
+      },
+      {
+        "condition": "3000genes_0.5",
+        "winner": "No-Spatial AE",
+        "runner_up": "Quality GNN (Ours)",
+        "winning_margin_r2": 6.091594696044922e-05,
+        "best_non_gated_method": "No-Spatial AE",
+        "gated_minus_best_non_gated_r2": -6.091594696044922e-05
+      }
+    ],
+    "gated_winning_margin_r2": {
+      "count": 11,
+      "min": 9.110569953918457e-05,
+      "max": 0.003969252109527588,
+      "mean": 0.0012355121699246492,
+      "median": 0.0006589889526367188
+    },
+    "gated_winning_margins_below_0.001": 7
+  },
+  "panelmeans": {
+    "50": {
+      "n_conditions": 5,
+      "methods": {
+        "No-Spatial AE": {
+          "val": {
+            "mse": 0.3633382201194763,
+            "mae": 0.4694542646408081,
+            "pearson": 0.8692742228507996,
+            "r2": 0.7550229072570801
+          },
+          "test": {
+            "mse": 0.39004241228103637,
+            "mae": 0.49678590297698977,
+            "pearson": 0.8387776255607605,
+            "r2": 0.6996266126632691
+          }
+        },
+        "Neighbor Impute": {
+          "val": {
+            "mse": 0.35251093506813047,
+            "mae": 0.4610666036605835,
+            "pearson": 0.8736379861831665,
+            "r2": 0.762330362200737
+          },
+          "test": {
+            "mse": 0.3799774408340454,
+            "mae": 0.4889460563659668,
+            "pearson": 0.8437900900840759,
+            "r2": 0.7073830902576447
+          }
+        },
+        "GCN Imputer": {
+          "val": {
+            "mse": 0.5046525657176971,
+            "mae": 0.5654127359390259,
+            "pearson": 0.812690794467926,
+            "r2": 0.659805417060852
+          },
+          "test": {
+            "mse": 0.47508820295333865,
+            "mae": 0.5604673743247985,
+            "pearson": 0.7986908197402954,
+            "r2": 0.6341905176639557
+          }
+        },
+        "GAT Imputer": {
+          "val": {
+            "mse": 0.4761935830116272,
+            "mae": 0.5473774909973145,
+            "pearson": 0.8244736075401307,
+            "r2": 0.678991287946701
+          },
+          "test": {
+            "mse": 0.4584593176841736,
+            "mae": 0.5475978493690491,
+            "pearson": 0.8059135913848877,
+            "r2": 0.6469841837882996
+          }
+        },
+        "Quality GNN (Ours)": {
+          "val": {
+            "mse": 0.3512756824493408,
+            "mae": 0.4596738159656525,
+            "pearson": 0.8740950584411621,
+            "r2": 0.7631647288799286
+          },
+          "test": {
+            "mse": 0.3790224134922028,
+            "mae": 0.48918141722679137,
+            "pearson": 0.8436620712280274,
+            "r2": 0.7081168055534363
+          }
+        }
+      },
+      "gated_test_gate": {
+        "mean": 0.383484873175621,
+        "std": 0.028837737254798414,
+        "min": 0.27919863238930703,
+        "max": 0.4488279610872269,
+        "spatial_dominant": 0.3282225251197815
+      },
+      "gated_delta_r2_vs_ae": 0.008490192890167236,
+      "gated_delta_r2_vs_neighbor": 0.000733715295791626
+    },
+    "100": {
+      "n_conditions": 5,
+      "methods": {
+        "No-Spatial AE": {
+          "val": {
+            "mse": 0.33208892941474916,
+            "mae": 0.4482124328613281,
+            "pearson": 0.8387757420539856,
+            "r2": 0.7029008984565734
+          },
+          "test": {
+            "mse": 0.35878780484199524,
+            "mae": 0.47652944922447205,
+            "pearson": 0.8021248936653137,
+            "r2": 0.6392692506313324
+          }
+        },
+        "Neighbor Impute": {
+          "val": {
+            "mse": 0.32707537412643434,
+            "mae": 0.44324092864990233,
+            "pearson": 0.8416188478469848,
+            "r2": 0.7073892593383789
+          },
+          "test": {
+            "mse": 0.35061599016189576,
+            "mae": 0.4693322658538818,
+            "pearson": 0.8074923276901245,
+            "r2": 0.6474711060523987
+          }
+        },
+        "GCN Imputer": {
+          "val": {
+            "mse": 0.43571415543556213,
+            "mae": 0.5299576640129089,
+            "pearson": 0.7813671708106995,
+            "r2": 0.6102039813995361
+          },
+          "test": {
+            "mse": 0.41590905785560606,
+            "mae": 0.5263423681259155,
+            "pearson": 0.7638980031013489,
+            "r2": 0.581805294752121
+          }
+        },
+        "GAT Imputer": {
+          "val": {
+            "mse": 0.41805461049079895,
+            "mae": 0.5126269578933715,
+            "pearson": 0.7916289806365967,
+            "r2": 0.6260025918483734
+          },
+          "test": {
+            "mse": 0.40290868282318115,
+            "mae": 0.5144336938858032,
+            "pearson": 0.7720511078834533,
+            "r2": 0.5948920667171478
+          }
+        },
+        "Quality GNN (Ours)": {
+          "val": {
+            "mse": 0.32787933349609377,
+            "mae": 0.44453972578048706,
+            "pearson": 0.8411030173301697,
+            "r2": 0.7066679298877716
+          },
+          "test": {
+            "mse": 0.35200687646865847,
+            "mae": 0.4714789569377899,
+            "pearson": 0.806224775314331,
+            "r2": 0.6460812151432037
+          }
+        }
+      },
+      "gated_test_gate": {
+        "mean": 0.31992397308349607,
+        "std": 0.05636804923415184,
+        "min": 0.14568113386631013,
+        "max": 0.45219804644584655,
+        "spatial_dominant": 0.053731344640254974
+      },
+      "gated_delta_r2_vs_ae": 0.006811964511871338,
+      "gated_delta_r2_vs_neighbor": -0.0013898909091949463
+    },
+    "200": {
+      "n_conditions": 5,
+      "methods": {
+        "No-Spatial AE": {
+          "val": {
+            "mse": 0.2801425099372864,
+            "mae": 0.4052384734153748,
+            "pearson": 0.8045358180999755,
+            "r2": 0.6469392657279969
+          },
+          "test": {
+            "mse": 0.29491232633590697,
+            "mae": 0.4231306970119476,
+            "pearson": 0.7674564003944397,
+            "r2": 0.5858315467834473
+          }
+        },
+        "Neighbor Impute": {
+          "val": {
+            "mse": 0.2799560844898224,
+            "mae": 0.4030292272567749,
+            "pearson": 0.8050596594810486,
+            "r2": 0.6471649467945099
+          },
+          "test": {
+            "mse": 0.29230753183364866,
+            "mae": 0.41974900364875795,
+            "pearson": 0.7700345873832702,
+            "r2": 0.589473956823349
+          }
+        },
+        "GCN Imputer": {
+          "val": {
+            "mse": 0.34973751902580263,
+            "mae": 0.4657544195652008,
+            "pearson": 0.7482433438301086,
+            "r2": 0.559236204624176
+          },
+          "test": {
+            "mse": 0.3314734995365143,
+            "mae": 0.45934671759605405,
+            "pearson": 0.7321966528892517,
+            "r2": 0.5345137655735016
+          }
+        },
+        "GAT Imputer": {
+          "val": {
+            "mse": 0.3376873552799225,
+            "mae": 0.4553187251091003,
+            "pearson": 0.7580414891242981,
+            "r2": 0.5744263589382171
+          },
+          "test": {
+            "mse": 0.32583112120628355,
+            "mae": 0.45531074404716493,
+            "pearson": 0.737042248249054,
+            "r2": 0.5424195826053619
+          }
+        },
+        "Quality GNN (Ours)": {
+          "val": {
+            "mse": 0.27933265566825866,
+            "mae": 0.4047630846500397,
+            "pearson": 0.8053158164024353,
+            "r2": 0.6479532957077027
+          },
+          "test": {
+            "mse": 0.2916734993457794,
+            "mae": 0.420997154712677,
+            "pearson": 0.7700323700904846,
+            "r2": 0.5903635382652282
+          }
+        }
+      },
+      "gated_test_gate": {
+        "mean": 0.42650755643844607,
+        "std": 0.13543328791856765,
+        "min": 0.09773896653205157,
+        "max": 0.674978768825531,
+        "spatial_dominant": 0.47082768455147744
+      },
+      "gated_delta_r2_vs_ae": 0.004531991481781006,
+      "gated_delta_r2_vs_neighbor": 0.0008895814418792725
+    },
+    "500": {
+      "n_conditions": 3,
+      "methods": {
+        "No-Spatial AE": {
+          "val": {
+            "mse": 0.19129145642121634,
+            "mae": 0.3038160502910614,
+            "pearson": 0.76497350136439,
+            "r2": 0.5847324927647909
+          },
+          "test": {
+            "mse": 0.19461022317409515,
+            "mae": 0.3084737956523895,
+            "pearson": 0.7365101377169291,
+            "r2": 0.5403611858685812
+          }
+        },
+        "Neighbor Impute": {
+          "val": {
+            "mse": 0.19370970129966736,
+            "mae": 0.30650492509206134,
+            "pearson": 0.7621021668116251,
+            "r2": 0.5794831613699595
+          },
+          "test": {
+            "mse": 0.197359765569369,
+            "mae": 0.311840941508611,
+            "pearson": 0.7332879304885864,
+            "r2": 0.5338759124279022
+          }
+        },
+        "GCN Imputer": {
+          "val": {
+            "mse": 0.2222370058298111,
+            "mae": 0.33639153838157654,
+            "pearson": 0.7194832563400269,
+            "r2": 0.5175411204497019
+          },
+          "test": {
+            "mse": 0.21139675875504813,
+            "mae": 0.3296649754047394,
+            "pearson": 0.7078123092651367,
+            "r2": 0.5006947914759318
+          }
+        },
+        "GAT Imputer": {
+          "val": {
+            "mse": 0.21966664989789328,
+            "mae": 0.3306287129720052,
+            "pearson": 0.7235497633616129,
+            "r2": 0.5231297314167023
+          },
+          "test": {
+            "mse": 0.21046252051989237,
+            "mae": 0.3286459942658742,
+            "pearson": 0.7094740867614746,
+            "r2": 0.5029092033704122
+          }
+        },
+        "Quality GNN (Ours)": {
+          "val": {
+            "mse": 0.19265303015708923,
+            "mae": 0.30717111627260846,
+            "pearson": 0.7632215817769369,
+            "r2": 0.5817737380663554
+          },
+          "test": {
+            "mse": 0.19499180714289346,
+            "mae": 0.3126917878786723,
+            "pearson": 0.7363420128822327,
+            "r2": 0.5394536455472311
+          }
+        }
+      },
+      "gated_test_gate": {
+        "mean": 0.38790984948476154,
+        "std": 0.1867795536915461,
+        "min": 0.01763970125466585,
+        "max": 0.6517220735549927,
+        "spatial_dominant": 0.3928086807330449
+      },
+      "gated_delta_r2_vs_ae": -0.0009075403213500977,
+      "gated_delta_r2_vs_neighbor": 0.0055777331193288164
+    },
+    "3000": {
+      "n_conditions": 3,
+      "methods": {
+        "No-Spatial AE": {
+          "val": {
+            "mse": 0.06696570912996928,
+            "mae": 0.1230709378918012,
+            "pearson": 0.6737358570098877,
+            "r2": 0.4528270959854126
+          },
+          "test": {
+            "mse": 0.06524060666561127,
+            "mae": 0.12165455271800359,
+            "pearson": 0.6582494179407755,
+            "r2": 0.43036911884943646
+          }
+        },
+        "Neighbor Impute": {
+          "val": {
+            "mse": 0.0683191791176796,
+            "mae": 0.12551760425170264,
+            "pearson": 0.6657914916674296,
+            "r2": 0.44175414244333905
+          },
+          "test": {
+            "mse": 0.06653321782747905,
+            "mae": 0.12432164698839188,
+            "pearson": 0.6509531935056051,
+            "r2": 0.4190777540206909
+          }
+        },
+        "GCN Imputer": {
+          "val": {
+            "mse": 0.07136999070644379,
+            "mae": 0.12817630171775818,
+            "pearson": 0.6467839678128561,
+            "r2": 0.4168928662935893
+          },
+          "test": {
+            "mse": 0.06725513686736424,
+            "mae": 0.12273192902406056,
+            "pearson": 0.6429331103960673,
+            "r2": 0.4127890070279439
+          }
+        },
+        "GAT Imputer": {
+          "val": {
+            "mse": 0.07187883059183757,
+            "mae": 0.12145897994438808,
+            "pearson": 0.6426032185554504,
+            "r2": 0.4126402735710144
+          },
+          "test": {
+            "mse": 0.06772585213184357,
+            "mae": 0.1174433281024297,
+            "pearson": 0.6396049658457438,
+            "r2": 0.4086647431055705
+          }
+        },
+        "Quality GNN (Ours)": {
+          "val": {
+            "mse": 0.06701142340898514,
+            "mae": 0.12273695568243663,
+            "pearson": 0.6732136011123657,
+            "r2": 0.4524483283360799
+          },
+          "test": {
+            "mse": 0.06524729231993358,
+            "mae": 0.12075051665306091,
+            "pearson": 0.657565156618754,
+            "r2": 0.4303104480107625
+          }
+        }
+      },
+      "gated_test_gate": {
+        "mean": 0.30124903718630475,
+        "std": 0.06602693970004718,
+        "min": 0.17089873552322388,
+        "max": 0.4739642341931661,
+        "spatial_dominant": 0.04138398867022867
+      },
+      "gated_delta_r2_vs_ae": -5.867083867390951e-05,
+      "gated_delta_r2_vs_neighbor": 0.011232693990071615
+    }
+  },
+  "selector": {
+    "means": {
+      "Gated": {
+        "mse": 0.280677678329604,
+        "mae": 0.39088640752292814,
+        "pearson": 0.7753008376984369,
+        "r2": 0.6015285750230154
+      },
+      "Validation-selected simple": {
+        "mse": 0.2808128822417486,
+        "mae": 0.38971733230920064,
+        "pearson": 0.7755761742591858,
+        "r2": 0.6014100625401452
+      },
+      "Post-hoc test reference": {
+        "mse": 0.28066939541271757,
+        "mae": 0.3895486511644863,
+        "pearson": 0.7757554139409747,
+        "r2": 0.6016110323724293
+      }
+    },
+    "selected_counts": {
+      "Neighbor Impute": 13,
+      "No-Spatial AE": 8
+    },
+    "test_reference_counts": {
+      "Neighbor Impute": 15,
+      "No-Spatial AE": 6
+    },
+    "gated_mean_delta_r2_vs_selected": 0.00011851248287019276,
+    "gated_mean_delta_r2_vs_test_reference": -8.245734941391718e-05,
+    "gated_mse_reduction_pct_vs_selected": 0.04814733251027093,
+    "mse_reduction_definition": "100 * (mean_selected_mse - mean_gated_mse) / mean_selected_mse; not mean of percentages",
+    "gated_wins_r2_vs_selected": 12,
+    "gated_wins_r2_vs_test_reference": 11,
+    "selection_rule": "Minimum saved val.mse among AE/Neighbor; lock method before reading entire test vector",
+    "test_reference_rule": "Maximum test.r2 among AE/Neighbor, same method for all four metrics; post-hoc diagnostic only",
+    "tie_break": "No-Spatial AE",
+    "checks": {
+      "validation_selection_ae8_neighbor13": true,
+      "test_reference_ae6_neighbor15": true,
+      "gated_delta_r2_vs_selected_matches": true,
+      "gated_delta_r2_vs_reference_matches": true,
+      "gated_mse_reduction_pct_matches": true
+    }
+  },
+  "rerun_maxdiffs": {
+    "n_conditions": 3,
+    "n_methods_per_condition": 5,
+    "numeric_leaves_compared": 1050,
+    "max_abs_diff_all_numeric_including_gate_history": 0.02440360188484192,
+    "max_abs_diff_metrics": 9.47713851928711e-06,
+    "max_abs_diff_gate_statistics": 0.0002466142177581787,
+    "by_field": {
+      "test.mae": 6.362795829772949e-06,
+      "test.mse": 3.129243850708008e-07,
+      "test.pearson": 5.960464477539062e-07,
+      "test.r2": 2.682209014892578e-06,
+      "test_gate.max": 0.0002466142177581787,
+      "test_gate.mean": 6.498396396636963e-05,
+      "test_gate.min": 2.5033950805664062e-05,
+      "test_gate.spatial_dominant": 0.0,
+      "test_gate.std": 2.370774745941162e-05,
+      "val.mae": 2.5331974029541016e-06,
+      "val.mse": 1.1399388313293457e-06,
+      "val.pearson": 7.510185241699219e-06,
+      "val.r2": 9.47713851928711e-06,
+      "val_gate.max": 0.00013372302055358887,
+      "val_gate.mean": 6.680190563201904e-05,
+      "val_gate.min": 2.5704503059387207e-05,
+      "val_gate.spatial_dominant": 0.0,
+      "val_gate.std": 2.7099624276161194e-05
+    },
+    "by_condition": {
+      "3000genes_0.1": 0.02440360188484192,
+      "3000genes_0.3": 0.015537738800048828,
+      "3000genes_0.5": 0.009746372699737549
+    },
+    "exact_equal_all_numeric": false,
+    "policy": "Compare rerun against current recovery_results.json without replacing/merging either file"
+  },
+  "capacity": {
+    "status": "counted",
+    "panels": [
+      50,
+      100,
+      200,
+      500,
+      3000
+    ],
+    "table_panels": [
+      50,
+      3000
+    ],
+    "hidden_dimensions": {
+      "NoSpatialAE": 256,
+      "NeighborMeanImpute": 256,
+      "GCNImputer": 256,
+      "GATImputer": 256,
+      "QualityDrivenRecoveryGNN": 256
+    },
+    "source": "expression_recovery.py",
+    "scope": "Current source and current installed PyTorch/PyG; not historical checkpoint verification"
+  },
+  "data_audit_checks": {
+    "x_full_matrix_finite_nonnegative_integer": true,
+    "edges_legal": true,
+    "no_cross_sample_edges": true,
+    "no_cross_split_edges": true,
+    "no_self_loops": true,
+    "no_duplicate_directed_edges": true,
+    "edge_distances_valid": true,
+    "outgoing_degree_all_six": true,
+    "splits_mutually_exclusive": true,
+    "splits_complete": true,
+    "samples_not_shared_between_splits": true,
+    "sample_plus_obs_name_unique": true,
+    "sample_counts_sum_to_n_obs": true
+  },
+  "csv_schemas": {
+    "main_metrics.csv": {
+      "rows": 105,
+      "columns": [
+        "condition",
+        "panel_genes",
+        "mask_rate",
+        "method",
+        "val_mse",
+        "val_mae",
+        "val_pearson",
+        "val_r2",
+        "test_mse",
+        "test_mae",
+        "test_pearson",
+        "test_r2",
+        "val_gate_mean",
+        "val_gate_std",
+        "val_gate_min",
+        "val_gate_max",
+        "val_gate_spatial_dominant",
+        "test_gate_mean",
+        "test_gate_std",
+        "test_gate_min",
+        "test_gate_max",
+        "test_gate_spatial_dominant"
+      ],
+      "null_encoding": "empty field"
+    },
+    "rerun_metrics.csv": {
+      "rows": 15,
+      "columns": [
+        "condition",
+        "panel_genes",
+        "mask_rate",
+        "method",
+        "val_mse",
+        "val_mae",
+        "val_pearson",
+        "val_r2",
+        "test_mse",
+        "test_mae",
+        "test_pearson",
+        "test_r2",
+        "val_gate_mean",
+        "val_gate_std",
+        "val_gate_min",
+        "val_gate_max",
+        "val_gate_spatial_dominant",
+        "test_gate_mean",
+        "test_gate_std",
+        "test_gate_min",
+        "test_gate_max",
+        "test_gate_spatial_dominant"
+      ],
+      "null_encoding": "empty field"
+    },
+    "ablation_metrics.csv": {
+      "rows": 12,
+      "columns": [
+        "condition",
+        "panel_genes",
+        "mask_rate",
+        "variant",
+        "label",
+        "test_mse",
+        "test_mae",
+        "test_pearson",
+        "test_r2",
+        "test_gate_mean",
+        "test_gate_std",
+        "test_gate_min",
+        "test_gate_max",
+        "test_gate_spatial_dominant",
+        "delta_r2",
+        "pearson_definition"
+      ],
+      "null_encoding": "empty field"
+    },
+    "baseline_selection.csv": {
+      "rows": 21,
+      "columns": [
+        "condition",
+        "panel_genes",
+        "mask_rate",
+        "ae_val_mse",
+        "neighbor_val_mse",
+        "selected_method",
+        "test_reference_method",
+        "gated_test_mse",
+        "gated_test_mae",
+        "gated_test_pearson",
+        "gated_test_r2",
+        "selected_test_mse",
+        "selected_test_mae",
+        "selected_test_pearson",
+        "selected_test_r2",
+        "reference_test_mse",
+        "reference_test_mae",
+        "reference_test_pearson",
+        "reference_test_r2",
+        "gated_minus_selected_r2",
+        "gated_minus_reference_r2",
+        "gated_mse_reduction_pct_vs_selected"
+      ],
+      "null_encoding": "empty field"
+    },
+    "rerun_differences.csv": {
+      "rows": 150,
+      "columns": [
+        "condition",
+        "panel_genes",
+        "mask_rate",
+        "method",
+        "field",
+        "main_value",
+        "rerun_value",
+        "signed_diff",
+        "abs_diff"
+      ],
+      "null_encoding": "empty field"
+    },
+    "sample_manifest.csv": {
+      "rows": 10,
+      "columns": [
+        "sample_id",
+        "sample_idx",
+        "sample_group",
+        "split",
+        "n_spots",
+        "celltype_Guard_cell",
+        "celltype_Lower_epidermal_cell",
+        "celltype_Palisade_mesophyll_cell",
+        "celltype_Spongy_mesophyll_cell",
+        "celltype_Upper_epidermal_cell",
+        "celltype_Vascular_cell"
+      ],
+      "null_encoding": "empty field"
+    },
+    "model_capacity.csv": {
+      "rows": 25,
+      "columns": [
+        "panel_genes",
+        "method",
+        "class_name",
+        "hidden_dim",
+        "total_parameters",
+        "trainable_parameters"
+      ],
+      "null_encoding": "empty field"
+    }
+  },
+  "latex_body_schemas": {
+    "main_rows.tex": {
+      "rows": 22,
+      "columns": [
+        "panel_genes",
+        "mask_rate",
+        "No-Spatial AE",
+        "Neighbor Impute",
+        "GCN Imputer",
+        "GAT Imputer",
+        "Quality GNN (Ours)"
+      ],
+      "midrules": 5
+    },
+    "ablation_rows.tex": {
+      "rows": 6,
+      "columns": [
+        "variant",
+        "50_0.9_r2",
+        "50_0.9_delta",
+        "200_0.7_r2",
+        "200_0.7_delta"
+      ],
+      "midrules": 0
+    },
+    "secondary_rows.tex": {
+      "rows": 10,
+      "columns": [
+        "condition",
+        "method",
+        "mse",
+        "mae",
+        "pearson",
+        "r2"
+      ],
+      "midrules": 1
+    },
+    "selector_rows.tex": {
+      "rows": 3,
+      "columns": [
+        "strategy",
+        "mse",
+        "mae",
+        "pearson",
+        "r2"
+      ],
+      "midrules": 0
+    },
+    "capacity_rows.tex": {
+      "rows": 5,
+      "columns": [
+        "method",
+        "parameters_50_genes",
+        "parameters_3000_genes"
+      ],
+      "midrules": 0
+    }
+  },
+  "checks": {
+    "main_rows_105": true,
+    "ablation_rows_12": true,
+    "baseline_selection_rows_21": true,
+    "all_selector_regressions_passed": true,
+    "source_hashes_unchanged_during_build": true,
+    "all_data_audit_checks_passed": true
+  }
+}

@@ -1,0 +1,26 @@
+panel_genes,method,class_name,hidden_dim,total_parameters,trainable_parameters
+50,No-Spatial AE,NoSpatialAE,256,159026,159026
+50,Neighbor Impute,NeighborMeanImpute,256,105522,105522
+50,GCN Imputer,GCNImputer,256,157490,157490
+50,GAT Imputer,GATImputer,256,158514,158514
+50,Quality GNN (Ours),QualityDrivenRecoveryGNN,256,503860,503860
+100,No-Spatial AE,NoSpatialAE,256,184676,184676
+100,Neighbor Impute,NeighborMeanImpute,256,143972,143972
+100,GCN Imputer,GCNImputer,256,183140,183140
+100,GAT Imputer,GATImputer,256,184164,184164
+100,Quality GNN (Ours),QualityDrivenRecoveryGNN,256,542310,542310
+200,No-Spatial AE,NoSpatialAE,256,235976,235976
+200,Neighbor Impute,NeighborMeanImpute,256,220872,220872
+200,GCN Imputer,GCNImputer,256,234440,234440
+200,GAT Imputer,GATImputer,256,235464,235464
+200,Quality GNN (Ours),QualityDrivenRecoveryGNN,256,619210,619210
+500,No-Spatial AE,NoSpatialAE,256,389876,389876
+500,Neighbor Impute,NeighborMeanImpute,256,451572,451572
+500,GCN Imputer,GCNImputer,256,388340,388340
+500,GAT Imputer,GATImputer,256,389364,389364
+500,Quality GNN (Ours),QualityDrivenRecoveryGNN,256,849910,849910
+3000,No-Spatial AE,NoSpatialAE,256,1672376,1672376
+3000,Neighbor Impute,NeighborMeanImpute,256,2374072,2374072
+3000,GCN Imputer,GCNImputer,256,1670840,1670840
+3000,GAT Imputer,GATImputer,256,1671864,1671864
+3000,Quality GNN (Ours),QualityDrivenRecoveryGNN,256,2772410,2772410

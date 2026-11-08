@@ -1,0 +1,211 @@
+{
+  "source": "data/processed/adata_processed.h5ad",
+  "shape": [
+    6016,
+    19191
+  ],
+  "matrix": {
+    "shape": [
+      6016,
+      19191
+    ],
+    "storage": "csr",
+    "dtype": "float32",
+    "elements_checked": 2253047,
+    "total_logical_elements": 115453056,
+    "logical_nonzero_count": 2253047,
+    "implicit_and_explicit_zero_count": 113200009,
+    "all_finite": true,
+    "negative_values": 0,
+    "noninteger_values": 0,
+    "min": 0.0,
+    "max": 1561.0,
+    "mean_including_zeros": 0.059529823099702096,
+    "scope": "Full X: all sparse stored data plus implicit zeros (no sampling, no densification)",
+    "raw_slot_present": false,
+    "interpretation": "Nonnegative integer-valued X supports count-valued data; does not prove processing history"
+  },
+  "n_samples": 10,
+  "n_cell_types": 6,
+  "celltypecounts": {
+    "Guard_cell": 184,
+    "Spongy_mesophyll_cell": 1255,
+    "Palisade_mesophyll_cell": 1514,
+    "Upper_epidermal_cell": 1270,
+    "Lower_epidermal_cell": 1030,
+    "Vascular_cell": 763
+  },
+  "sample_spotcounts": {
+    "S1-1_stereoseq": 721,
+    "S1-2_stereoseq": 618,
+    "S1-3_stereoseq": 389,
+    "S1-4_stereoseq": 548,
+    "S1-5_stereoseq": 537,
+    "S1-6_stereoseq": 557,
+    "S1-7_stereoseq": 438,
+    "S2-1_stereoseq": 734,
+    "S2-3_stereoseq": 776,
+    "S2-4_stereoseq": 698
+  },
+  "sample_group_spotcounts": {
+    "S1": 3808,
+    "S2": 2208
+  },
+  "sample_group_definition": "Literal sample_id prefix before '-' (not an inferred biological grouping)",
+  "obs_names_unique_globally": false,
+  "duplicate_obs_names_globally": 501,
+  "duplicate_obs_names_within_sample": 0,
+  "edges": {
+    "columns": [
+      "source",
+      "target",
+      "distance"
+    ],
+    "directed_edges": 36096,
+    "invalid_endpoint_rows": 0,
+    "self_loops": 0,
+    "cross_sample_edges": 0,
+    "cross_split_edges": 0,
+    "duplicate_directed_edges": 0,
+    "unique_undirected_edges": 21815,
+    "reciprocal_directed_edges": 28562,
+    "distance_all_finite_nonnegative": true,
+    "distance_range": [
+      5.563535258682972,
+      636.7120924899656
+    ],
+    "incoming_degree": {
+      "count": 6016,
+      "min": 0,
+      "max": 14,
+      "mean": 6.0,
+      "median": 6.0,
+      "zero_degree_nodes": 7,
+      "histogram": {
+        "0": 7,
+        "1": 62,
+        "2": 162,
+        "3": 395,
+        "4": 776,
+        "5": 1113,
+        "6": 1182,
+        "7": 951,
+        "8": 673,
+        "9": 377,
+        "10": 215,
+        "11": 69,
+        "12": 22,
+        "13": 11,
+        "14": 1
+      }
+    },
+    "outgoing_degree": {
+      "count": 6016,
+      "min": 6,
+      "max": 6,
+      "mean": 6.0,
+      "median": 6.0,
+      "zero_degree_nodes": 0,
+      "histogram": {
+        "6": 6016
+      }
+    },
+    "undirected_degree": {
+      "count": 6016,
+      "min": 6,
+      "max": 14,
+      "mean": 7.252327127659575,
+      "median": 7.0,
+      "zero_degree_nodes": 0,
+      "histogram": {
+        "6": 2302,
+        "7": 1606,
+        "8": 1056,
+        "9": 601,
+        "10": 300,
+        "11": 108,
+        "12": 30,
+        "13": 11,
+        "14": 2
+      }
+    },
+    "nodes_with_incoming_not_equal_outgoing_degree": 4834,
+    "degree_scope": "All n_obs nodes, legal edges only; incoming=target count, outgoing=source count"
+  },
+  "splits": {
+    "mask_encoding": "boolean in AnnData row order; not obs-name lookup",
+    "spot_counts": {
+      "train": 3370,
+      "val": 1172,
+      "test": 1474
+    },
+    "samples": {
+      "train": [
+        "S1-1_stereoseq",
+        "S1-2_stereoseq",
+        "S1-3_stereoseq",
+        "S1-4_stereoseq",
+        "S1-5_stereoseq",
+        "S1-6_stereoseq"
+      ],
+      "val": [
+        "S1-7_stereoseq",
+        "S2-1_stereoseq"
+      ],
+      "test": [
+        "S2-3_stereoseq",
+        "S2-4_stereoseq"
+      ]
+    },
+    "pairwise_overlap_counts": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "unassigned_spots": 0,
+    "multiply_assigned_spots": 0,
+    "sample_level_disjoint": true,
+    "celltypecounts": {
+      "train": {
+        "Guard_cell": 112,
+        "Spongy_mesophyll_cell": 714,
+        "Palisade_mesophyll_cell": 825,
+        "Upper_epidermal_cell": 688,
+        "Lower_epidermal_cell": 587,
+        "Vascular_cell": 444
+      },
+      "val": {
+        "Guard_cell": 34,
+        "Lower_epidermal_cell": 203,
+        "Upper_epidermal_cell": 246,
+        "Spongy_mesophyll_cell": 194,
+        "Vascular_cell": 215,
+        "Palisade_mesophyll_cell": 280
+      },
+      "test": {
+        "Guard_cell": 38,
+        "Upper_epidermal_cell": 336,
+        "Lower_epidermal_cell": 240,
+        "Spongy_mesophyll_cell": 347,
+        "Palisade_mesophyll_cell": 409,
+        "Vascular_cell": 104
+      }
+    }
+  },
+  "checks": {
+    "x_full_matrix_finite_nonnegative_integer": true,
+    "edges_legal": true,
+    "no_cross_sample_edges": true,
+    "no_cross_split_edges": true,
+    "no_self_loops": true,
+    "no_duplicate_directed_edges": true,
+    "edge_distances_valid": true,
+    "outgoing_degree_all_six": true,
+    "splits_mutually_exclusive": true,
+    "splits_complete": true,
+    "samples_not_shared_between_splits": true,
+    "sample_plus_obs_name_unique": true,
+    "sample_counts_sum_to_n_obs": true
+  },
+  "all_checks_passed": true
+}
